@@ -59,7 +59,7 @@ def calculate(path2file):
         if (len(string) != 0):
             string += ","
         
-        value = line.split("    ").replace("\n", "")
+        value = line.replace("\n", "").split("    ")
 
         if value[0] == '+':
             string += str(int(value[1]) + int(value[2]))
