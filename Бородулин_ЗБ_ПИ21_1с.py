@@ -29,18 +29,24 @@ def bin_search(li, element):
 
 
 def is_palindrome(string):
-    string1 = ''
-    string = string.lower()
-    wrong_symbols = [',', '.', '-', ' ', '?', '!', '_', "'"]
-    for symbol in wrong_symbols:
-        string = string.replace(symbol, '')
-    print(string)
-    for i in range(len(string) - 1, -1, -1):
-        string1 += string[i]
-    if string == string1:
-        return 'YES'
-    else:
-        return 'NO'
+    string = string.lower().replace(" ", "")
+    start = 0
+    end = len(string) - 1
+    result = "YES"
+
+    while (start < len(string) - 1) & (result == "YES") & (start < end):
+        while not str.isalpha(string[start]):
+            start += 1
+        while not str.isalpha(string[end]):
+            end -= 1
+        
+        if (string[start] != string[end]):
+            result = "NO"
+        else:
+            start += 1
+            end -= 1
+    
+    return result
 
 
 def calculate(path2file):
