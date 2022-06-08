@@ -25,7 +25,7 @@ def bin_search(li, element):
             high = mid - 1
         else:
             low = mid + 1
-    return None 
+    return -1 
 
 
 def is_palindrome(string):
